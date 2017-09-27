@@ -1,0 +1,8 @@
+<FilesMatch "(statusSC.png)">
+ForceType application/x-httpd-php
+</FilesMatch>
+
+#<FilesMatch "(steam.html)">
+#Access-Control-Allow-Origin http://api.steampowered.com/
+#Access-Control-Allow-Credentials true
+#</FilesMatch>
