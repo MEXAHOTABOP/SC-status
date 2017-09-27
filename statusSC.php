@@ -1,6 +1,6 @@
 <?php
 	header('Content-type: image/png;');
-	$name   = 'MEXAHOTABOP';//$_GET['name'];
+	$name   = $_GET['name'];
     $jsonObj= json_decode(file_get_contents("http://gmt.star-conflict.com/pubapi/v1/userinfo.php?nickname={$name}"),true);
     //array(3)
     //{
@@ -50,7 +50,7 @@
     $healPG         = round($jsonObj['data']['pvp']['totalHealingDone']/$jsonObj['data']['pvp']['gamePlayed']);
     
     $status = "{$time} {$name}[{$jsonObj['data'][clan][tag]}] 
-в среднем:{$killPG} убийств, {$supportPG} помощи, {$deathPG} смертей
+в среднем: {$killPG} убийств, {$supportPG} помощи, {$deathPG} смертей
 winrate {$winrate}, damage/game {$damagePG}, heal/game {$healPG}
 kill/death {$killDR}, assists/death {$assistDR}";
     
